@@ -8,6 +8,14 @@ on:
     - cron: "0 6 * * 1"
   workflow_dispatch:
 
+# Least privilege by default; only the release job gets write access.
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   hassfest:
     runs-on: ubuntu-24.04
