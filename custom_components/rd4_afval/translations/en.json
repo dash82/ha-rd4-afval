@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "RD4 waste calendar",
+        "description": "Enter the address to fetch the RD4 waste calendar for. If a house number extension (toevoeging) doesn't match, the available extensions are shown: {extensions}",
+        "data": {
+          "postcode": "Postcode",
+          "house_number": "House number",
+          "house_number_extension": "Extension (optional)"
+        },
+        "data_description": {
+          "postcode": "Dutch postcode, e.g. 1234 AB",
+          "house_number": "Number only, without extension",
+          "house_number_extension": "Letter or addition, e.g. A. Leave empty if there is none."
+        }
+      },
+      "reconfigure": {
+        "title": "Change address",
+        "description": "Enter the address to fetch the RD4 waste calendar for. If a house number extension (toevoeging) doesn't match, the available extensions are shown: {extensions}",
+        "data": {
+          "postcode": "Postcode",
+          "house_number": "House number",
+          "house_number_extension": "Extension (optional)"
+        },
+        "data_description": {
+          "postcode": "Dutch postcode, e.g. 1234 AB",
+          "house_number": "Number only, without extension",
+          "house_number_extension": "Letter or addition, e.g. A. Leave empty if there is none."
+        }
+      }
+    },
+    "error": {
+      "invalid_postcode": "Enter a valid postcode, like 1234 AB.",
+      "address_not_found": "RD4 does not know this address. Extensions known for this house number: {extensions}",
+      "no_calendar": "RD4 has not published a calendar for this address and year.",
+      "cannot_connect": "Could not reach RD4. Try again later.",
+      "unknown": "Unexpected error, see the Home Assistant log."
+    },
+    "abort": {
+      "already_configured": "This address is already configured.",
+      "reconfigure_successful": "Address updated."
+    }
+  },
+  "entity": {
+    "calendar": {
+      "calendar": {
+        "name": "Waste collection"
+      }
+    },
+    "sensor": {
+      "next_pickup": {
+        "name": "Next pickup"
+      },
+      "next_pickup_types": {
+        "name": "Next pickup types"
+      },
+      "residual_waste": {
+        "name": "Residual waste"
+      },
+      "gft": {
+        "name": "Organic waste (GFT)"
+      },
+      "paper": {
+        "name": "Paper"
+      },
+      "pruning_waste": {
+        "name": "Pruning waste (by appointment)"
+      },
+      "pmd": {
+        "name": "Plastic, metal & drink cartons (PMD)"
+      },
+      "best_bag": {
+        "name": "BEST bag"
+      },
+      "christmas_trees": {
+        "name": "Christmas trees"
+      },
+      "textile": {
+        "name": "Textile"
+      },
+      "other_waste": {
+        "name": "{waste_type}"
+      }
+    }
+  }
+}

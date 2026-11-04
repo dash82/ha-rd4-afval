@@ -1,0 +1,97 @@
+{
+  "success": true,
+  "code": 0,
+  "message": "Jouw kalender.",
+  "data": {
+    "items": [
+      [
+        {
+          "date": "2026-10-24",
+          "month": 10,
+          "type": "paper"
+        },
+        {
+          "date": "2026-11-04",
+          "month": 11,
+          "type": "best_bag"
+        },
+        {
+          "date": "2026-11-04",
+          "month": 11,
+          "type": "pruning_waste"
+        },
+        {
+          "date": "2026-11-05",
+          "month": 11,
+          "type": "gft"
+        },
+        {
+          "date": "2026-11-05",
+          "month": 11,
+          "type": "pmd"
+        },
+        {
+          "date": "2026-11-12",
+          "month": 11,
+          "type": "residual_waste"
+        },
+        {
+          "date": "2026-11-19",
+          "month": 11,
+          "type": "gft"
+        },
+        {
+          "date": "2026-11-19",
+          "month": 11,
+          "type": "pmd"
+        },
+        {
+          "date": "2026-11-21",
+          "month": 11,
+          "type": "paper"
+        },
+        {
+          "date": "2026-11-25",
+          "month": 11,
+          "type": "pruning_waste"
+        },
+        {
+          "date": "2026-12-03",
+          "month": 12,
+          "type": "gft"
+        },
+        {
+          "date": "2026-12-03",
+          "month": 12,
+          "type": "pmd"
+        },
+        {
+          "date": "2026-12-10",
+          "month": 12,
+          "type": "residual_waste"
+        },
+        {
+          "date": "2026-12-17",
+          "month": 12,
+          "type": "pmd"
+        },
+        {
+          "date": "2026-12-19",
+          "month": 12,
+          "type": "paper"
+        },
+        {
+          "date": "2026-12-31",
+          "month": 12,
+          "type": "gft"
+        },
+        {
+          "date": "2026-12-31",
+          "month": 12,
+          "type": "pmd"
+        }
+      ]
+    ],
+    "info_text": ""
+  }
+}
