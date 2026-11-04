@@ -14,7 +14,7 @@ the UI, no YAML.
 
 ### HACS (recommended)
 
-1. HACS → ⋮ → **Custom repositories** → add `https://github.com/YOUR_GITHUB_USER/ha-rd4-afval`
+1. HACS → ⋮ → **Custom repositories** → add `https://github.com/dash82/rd4_hacs`
    as category **Integration**.
 2. Download **RD4 Afvalkalender**, then restart Home Assistant.
 3. **Settings → Devices & services → Add integration → RD4 Afvalkalender**.
@@ -56,7 +56,7 @@ The next-pickup states roll over at midnight without calling RD4 again.
 
 ## Reminder blueprint
 
-[![Import blueprint](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2FYOUR_GITHUB_USER%2Fha-rd4-afval%2Fblob%2Fmain%2Fblueprints%2Fautomation%2Frd4_afval%2Fpickup_reminder.yaml)
+[![Import blueprint](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fdash82%2Frd4_hacs%2Fblob%2Fmain%2Fblueprints%2Fautomation%2Frd4_afval%2Fpickup_reminder.yaml)
 
 Pick the two summary sensors, a time and how many days ahead, then add your own notify action. Inside it,
 `{{ pickup_text }}` and `{{ days_until }}` are available, for example:
@@ -95,8 +95,9 @@ CI runs hassfest, HACS validation, Ruff and pytest (`.github/workflows/validate.
 
 ### Releasing
 
-HACS installs from GitHub releases: bump `version` in `custom_components/rd4_afval/manifest.json`, tag
-`vX.Y.Z` and publish a release.
+On every push to `main` the GitHub workflow runs hassfest, HACS validation, Ruff and pytest. If all pass, it
+publishes a GitHub release `v<version>` when that tag doesn't exist yet. To ship a new version, bump `version`
+in `custom_components/rd4_afval/manifest.json` and push to `main`.
 
 ### Getting into the default HACS store
 

@@ -1,7 +1,8 @@
-name: Validate
+name: Validate and release
 
 on:
   push:
+    branches: [main]
   pull_request:
   schedule:
     - cron: "0 6 * * 1"
@@ -21,6 +22,7 @@ jobs:
       - uses: hacs/action@main
         with:
           category: integration
+          ignore: brands
 
   tests:
     runs-on: ubuntu-latest
@@ -33,3 +35,24 @@ jobs:
       - run: ruff check .
       - run: ruff format --check .
       - run: pytest
+
+  release:
+    # Publish a release when manifest.json carries a version that has no release yet.
+    needs: [hassfest, hacs, tests]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create release if the version is new
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          version="$(jq -r .version custom_components/rd4_afval/manifest.json)"
+          if gh release view "v${version}" >/dev/null 2>&1; then
+            echo "v${version} already released, nothing to do"
+          else
+            gh release create "v${version}" --target "${GITHUB_SHA}" \
+              --title "v${version}" --generate-notes
+          fi
