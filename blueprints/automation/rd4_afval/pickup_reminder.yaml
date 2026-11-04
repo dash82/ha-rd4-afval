@@ -5,7 +5,7 @@ blueprint:
     time when waste is collected X days from now. Inside your actions you can use
     `{{ pickup_text }}` (e.g. "GFT en etensresten, PMD-verpakkingen") and `{{ days_until }}`.
   domain: automation
-  source_url: https://github.com/YOUR_GITHUB_USER/ha-rd4-afval/blob/main/blueprints/automation/rd4_afval/pickup_reminder.yaml
+  source_url: https://github.com/dash82/rd4_hacs/blob/main/blueprints/automation/rd4_afval/pickup_reminder.yaml
   input:
     next_pickup:
       name: Next pickup sensor

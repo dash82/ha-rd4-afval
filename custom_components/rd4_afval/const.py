@@ -16,7 +16,7 @@ CONF_EXTENSION: Final = "house_number_extension"
 # Unofficial API used by https://mijn.rd4.nl/kalender (no authentication).
 API_BASE: Final = "https://data.rd4.nl/api/v1"
 REQUEST_TIMEOUT: Final = 20
-USER_AGENT: Final = "HomeAssistant-rd4_afval (+https://github.com/YOUR_GITHUB_USER/ha-rd4-afval)"
+USER_AGENT: Final = "HomeAssistant-rd4_afval (+https://github.com/dash82/rd4_hacs)"
 
 # The calendar only changes a few times a year; be polite to the API.
 UPDATE_INTERVAL: Final = timedelta(hours=12)
