@@ -1,0 +1,6 @@
+{
+  "name": "RD4 Afvalkalender",
+  "homeassistant": "2026.2.0",
+  "country": "NL",
+  "render_readme": true
+}

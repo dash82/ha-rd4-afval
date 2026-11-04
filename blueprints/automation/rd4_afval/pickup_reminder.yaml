@@ -1,0 +1,68 @@
+blueprint:
+  name: RD4 pickup reminder
+  description: >-
+    Run your own actions (e.g. a phone notification or a spoken announcement) at a set
+    time when waste is collected X days from now. Inside your actions you can use
+    `{{ pickup_text }}` (e.g. "GFT en etensresten, PMD-verpakkingen") and `{{ days_until }}`.
+  domain: automation
+  source_url: https://github.com/YOUR_GITHUB_USER/ha-rd4-afval/blob/main/blueprints/automation/rd4_afval/pickup_reminder.yaml
+  input:
+    next_pickup:
+      name: Next pickup sensor
+      description: The "Next pickup" sensor of the RD4 Afvalkalender integration.
+      selector:
+        entity:
+          filter:
+            - integration: rd4_afval
+              domain: sensor
+              device_class: date
+    next_pickup_types:
+      name: Next pickup types sensor
+      description: The "Next pickup types" sensor of the RD4 Afvalkalender integration.
+      selector:
+        entity:
+          filter:
+            - integration: rd4_afval
+              domain: sensor
+    remind_at:
+      name: Time of day
+      default: "19:00:00"
+      selector:
+        time:
+    days_before:
+      name: Days before pickup
+      description: 0 = on the day itself, 1 = the evening before.
+      default: 1
+      selector:
+        number:
+          min: 0
+          max: 7
+          mode: box
+    notify_actions:
+      name: Actions
+      description: What to do. Use `{{ pickup_text }}` and `{{ days_until }}` in your message.
+      selector:
+        action:
+
+mode: single
+max_exceeded: silent
+
+variables:
+  next_pickup: !input next_pickup
+  next_pickup_types: !input next_pickup_types
+  days_before: !input days_before
+
+triggers:
+  - trigger: time
+    at: !input remind_at
+
+conditions:
+  - condition: template
+    value_template: >-
+      {{ state_attr(next_pickup, 'days_until') | int(-1) == days_before | int }}
+
+actions:
+  - variables:
+      pickup_text: "{{ states(next_pickup_types) }}"
+      days_until: "{{ state_attr(next_pickup, 'days_until') }}"
+  - sequence: !input notify_actions

@@ -1,0 +1,20 @@
+{
+  "entity": {
+    "sensor": {
+      "next_pickup": { "default": "mdi:calendar-arrow-right" },
+      "next_pickup_types": { "default": "mdi:delete-variant" },
+      "residual_waste": { "default": "mdi:trash-can" },
+      "gft": { "default": "mdi:leaf" },
+      "paper": { "default": "mdi:newspaper-variant-multiple" },
+      "pruning_waste": { "default": "mdi:tree" },
+      "pmd": { "default": "mdi:recycle" },
+      "best_bag": { "default": "mdi:bag-personal" },
+      "christmas_trees": { "default": "mdi:pine-tree" },
+      "textile": { "default": "mdi:tshirt-crew" },
+      "other_waste": { "default": "mdi:delete" }
+    },
+    "calendar": {
+      "calendar": { "default": "mdi:calendar-month" }
+    }
+  }
+}

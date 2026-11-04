@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "RD4 afvalkalender",
+        "description": "Vul het adres in waarvoor de RD4 afvalkalender opgehaald moet worden. Past een toevoeging niet, dan worden de beschikbare toevoegingen getoond: {extensions}",
+        "data": {
+          "postcode": "Postcode",
+          "house_number": "Huisnummer",
+          "house_number_extension": "Toevoeging (optioneel)"
+        },
+        "data_description": {
+          "postcode": "Nederlandse postcode, bijv. 1234 AB",
+          "house_number": "Alleen het nummer, zonder toevoeging",
+          "house_number_extension": "Letter of toevoeging, bijv. A. Laat leeg als die er niet is."
+        }
+      },
+      "reconfigure": {
+        "title": "Adres wijzigen",
+        "description": "Vul het adres in waarvoor de RD4 afvalkalender opgehaald moet worden. Past een toevoeging niet, dan worden de beschikbare toevoegingen getoond: {extensions}",
+        "data": {
+          "postcode": "Postcode",
+          "house_number": "Huisnummer",
+          "house_number_extension": "Toevoeging (optioneel)"
+        },
+        "data_description": {
+          "postcode": "Nederlandse postcode, bijv. 1234 AB",
+          "house_number": "Alleen het nummer, zonder toevoeging",
+          "house_number_extension": "Letter of toevoeging, bijv. A. Laat leeg als die er niet is."
+        }
+      }
+    },
+    "error": {
+      "invalid_postcode": "Vul een geldige postcode in, zoals 1234 AB.",
+      "address_not_found": "RD4 kent dit adres niet. Bekende toevoegingen bij dit huisnummer: {extensions}",
+      "no_calendar": "RD4 heeft voor dit adres en jaar geen kalender gepubliceerd.",
+      "cannot_connect": "Kan RD4 niet bereiken. Probeer het later opnieuw.",
+      "unknown": "Onverwachte fout, zie het Home Assistant-logboek."
+    },
+    "abort": {
+      "already_configured": "Dit adres is al ingesteld.",
+      "reconfigure_successful": "Adres bijgewerkt."
+    }
+  },
+  "entity": {
+    "calendar": {
+      "calendar": {
+        "name": "Afvalophaling"
+      }
+    },
+    "sensor": {
+      "next_pickup": {
+        "name": "Volgende ophaling"
+      },
+      "next_pickup_types": {
+        "name": "Volgende ophaling: soorten"
+      },
+      "residual_waste": {
+        "name": "Restafval"
+      },
+      "gft": {
+        "name": "GFT en etensresten"
+      },
+      "paper": {
+        "name": "Papierafval"
+      },
+      "pruning_waste": {
+        "name": "Snoeiafval op afspraak"
+      },
+      "pmd": {
+        "name": "PMD-verpakkingen"
+      },
+      "best_bag": {
+        "name": "BEST-tas"
+      },
+      "christmas_trees": {
+        "name": "Kerstbomen"
+      },
+      "textile": {
+        "name": "Textiel"
+      },
+      "other_waste": {
+        "name": "{waste_type}"
+      }
+    }
+  }
+}
