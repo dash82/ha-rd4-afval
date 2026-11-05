@@ -1,13 +1,20 @@
 {
   "domain": "rd4_afval",
   "name": "RD4 Afvalkalender",
-  "codeowners": ["@dash82"],
+  "categories": [
+    "local_services"
+  ],
+  "codeowners": [
+    "@dash82"
+  ],
   "config_flow": true,
   "documentation": "https://github.com/dash82/rd4_hacs",
   "integration_type": "service",
   "iot_class": "cloud_polling",
   "issue_tracker": "https://github.com/dash82/rd4_hacs/issues",
-  "loggers": ["custom_components.rd4_afval"],
+  "loggers": [
+    "custom_components.rd4_afval"
+  ],
   "requirements": [],
   "version": "0.1.0"
 }
