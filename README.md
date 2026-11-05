@@ -17,7 +17,8 @@ the UI, no YAML.
 1. HACS → ⋮ → **Custom repositories** → add `https://github.com/dash82/rd4_hacs`
    as category **Integration**.
 2. Download **RD4 Afvalkalender**, then restart Home Assistant.
-3. **Settings → Devices & services → Add integration → RD4 Afvalkalender**.
+3. **Settings → Devices & services → Add integration → RD4 Afvalkalender**. A form opens asking for your
+   postcode, house number and (optionally) house number extension, see [Configuration](#configuration).
 
 ### Manual
 
