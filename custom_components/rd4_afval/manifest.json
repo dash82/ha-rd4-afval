@@ -8,13 +8,13 @@
     "@dash82"
   ],
   "config_flow": true,
-  "documentation": "https://github.com/dash82/rd4_hacs",
+  "documentation": "https://github.com/dash82/ha-rd4-afval",
   "integration_type": "service",
   "iot_class": "cloud_polling",
-  "issue_tracker": "https://github.com/dash82/rd4_hacs/issues",
+  "issue_tracker": "https://github.com/dash82/ha-rd4-afval/issues",
   "loggers": [
     "custom_components.rd4_afval"
   ],
   "requirements": [],
-  "version": "0.1.1"
+  "version": "0.1.2"
 }
