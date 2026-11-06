@@ -1,6 +1,6 @@
 # RD4 Afvalkalender for Home Assistant
 
-[![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://hacs.xyz)
+[![hacs_badge](https://img.shields.io/badge/HACS-Default-41BDF5.svg)](https://hacs.xyz)
 
 Brings your [RD4](https://www.rd4.nl) waste collection calendar into Home Assistant:
 a calendar, a sensor per waste type, and a "next pickup" summary. Configured entirely in
@@ -14,11 +14,13 @@ the UI, no YAML.
 
 ### HACS (recommended)
 
-1. HACS → ⋮ → **Custom repositories** → add `https://github.com/dash82/rd4_hacs`
-   as category **Integration**.
-2. Download **RD4 Afvalkalender**, then restart Home Assistant.
+1. Open **HACS**, search for **RD4 Afvalkalender** and click **Download**.
+2. Restart Home Assistant.
 3. **Settings → Devices & services → Add integration → RD4 Afvalkalender**. A form opens asking for your
    postcode, house number and (optionally) house number extension, see [Configuration](#configuration).
+
+Not listed yet? Add it as a custom repository: HACS → ⋮ → **Custom repositories** → add
+`https://github.com/dash82/ha-rd4-afval` as category **Integration**, then continue with step 1.
 
 ### Manual
 
@@ -57,7 +59,7 @@ The next-pickup states roll over at midnight without calling RD4 again.
 
 ## Reminder blueprint
 
-[![Import blueprint](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fdash82%2Frd4_hacs%2Fblob%2Fmain%2Fblueprints%2Fautomation%2Frd4_afval%2Fpickup_reminder.yaml)
+[![Import blueprint](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2Fdash82%2Fha-rd4-afval%2Fblob%2Fmain%2Fblueprints%2Fautomation%2Frd4_afval%2Fpickup_reminder.yaml)
 
 Pick the two summary sensors, a time and how many days ahead, then add your own notify action. Inside it,
 `{{ pickup_text }}` and `{{ days_until }}` are available, for example:
@@ -99,13 +101,6 @@ CI runs hassfest, HACS validation, Ruff and pytest (`.github/workflows/validate.
 On every push to `main` the GitHub workflow runs hassfest, HACS validation, Ruff and pytest. If all pass, it
 publishes a GitHub release `v<version>` when that tag doesn't exist yet. To ship a new version, bump `version`
 in `custom_components/rd4_afval/manifest.json` and push to `main`.
-
-### Getting into the default HACS store
-
-Once the repo is public, has a release, passes the HACS and hassfest workflows and has topics set
-(`home-assistant`, `hacs`, `integration`), open a PR against
-[hacs/default](https://github.com/hacs/default). Brand images live in
-`custom_components/rd4_afval/brand/`.
 
 ## License
 
